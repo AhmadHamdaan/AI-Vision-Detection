@@ -183,13 +183,29 @@ python simple_train.py --dataset coco128 --model yolov12m.pt --epochs 50 --batch
 
 ### Run Inference
 ```bash
-# Test with trained model (put your image anywhere)
+# 🖼️ SHOW ONLY (doesn't save - just displays results)
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source your_image.jpg
-python simple_infer.py --weights runs/train_coco128/weights/best.pt --source images/my_photo.jpg
-python simple_infer.py --weights runs/train_coco128/weights/best.pt --source "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\test.jpg"
+
+# 💾 SAVE RESULTS (recommended - saves processed image)
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source your_image.jpg --save
+
+# 📁 Saved results go to: yolov12/runs/detect/predict/
+```
+
+### Auto-Save Examples
+```bash
+# Single image with save
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source "C:\Users\Ahmad Hamdaan\Desktop\test.jpg" --save
+
+# Batch folder with save (processes all images in folder)
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source images_folder/ --save
+
+# With custom confidence and save
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source your_image.jpg --conf 0.5 --save
 
 # Test with pretrained model (no training needed)
-python simple_infer.py --weights yolov12n.pt --source your_image.jpg
+python simple_infer.py --weights yolov12n.pt --source your_image.jpg --save
+```
 
 # Batch inference on folder
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source images_folder/
@@ -222,13 +238,39 @@ Your training results will be saved in:
 
 ## 🔧 Troubleshooting
 
-If you get multiprocessing errors:
+### Path with Spaces Error
+```bash
+# ❌ Wrong (causes error)
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\test.jpg
+
+# ✅ Correct (use quotes)
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\test.jpg"
+```
+
+### File Not Found Error
+```bash
+# Check if file exists first
+dir "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\sidetest.jpg"
+
+# Or use a simpler path (copy image to desktop)
+copy "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\sidetest.jpg" "C:\Users\Ahmad Hamdaan\Desktop\sidetest.jpg"
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source "C:\Users\Ahmad Hamdaan\Desktop\sidetest.jpg" --save
+```
+
+### Multiprocessing Errors
 - The training script is already fixed with `workers=0`
 - If issues persist, restart your terminal
 
-If you get CUDA out of memory:
+### CUDA Out of Memory
 - Reduce batch size: `--batch 4` or `--batch 8`
 - Use smaller model: `--model yolov12n.pt`
+
+### Quick Fix for Path Issues
+```bash
+# Copy image to project folder (easiest)
+copy "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\sidetest.jpg" "sidetest.jpg"
+python simple_infer.py --weights runs/train_coco128/weights/best.pt --source sidetest.jpg --save
+```
 
 ## 📁 File Locations
 
