@@ -1,0 +1,18 @@
+# YOLOv12 Simple Requirements
+# Optimized for RTX 3070 Ti
+
+# Core ML libraries
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0
+
+# Computer Vision
+opencv-python>=4.8.0
+
+# Utilities
+PyYAML>=6.0
+Pillow>=10.0.0
+
+# Optional but helpful
+tqdm>=4.65.0
+matplotlib>=3.7.0
