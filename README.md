@@ -1,12 +1,12 @@
-# YOLOv12 Simple Setup - RTX 3070 Ti
+# YOLOv12 Simple Setup
 
-A streamlined YOLOv12 setup optimized for your RTX 3070 Ti (8GB VRAM).
+
 
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
 ```bash
-# Install PyTorch with CUDA (for RTX 3070 Ti)
+# Install PyTorch with CUDA 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 # Install other requirements
@@ -128,7 +128,7 @@ watch -n 1 nvidia-smi
 
 ## 📊 Expected Performance
 
-### Training Times (RTX 3070 Ti)
+### Training Times 
 - **yolov12n**: ~2 min/epoch (1000 images)
 - **yolov12s**: ~3 min/epoch (1000 images)  
 - **yolov12m**: ~5 min/epoch (1000 images)
