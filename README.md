@@ -272,21 +272,10 @@ copy "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\sidetest.jpg" "sidetest.jpg"
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source sidetest.jpg --save
 ```
 
-## 📁 File Locations
+##  File Locations
 
 - **Dataset**: `datasets/coco128/` (128 images, 80 classes)
 - **Config**: `datasets/coco128.yaml`
 - **Trained models**: `runs/train_coco128/weights/`
 - **Training logs**: `runs/train_coco128/`
 
-## 🎉 That's It!
-
-This simple setup gives you:
-- ✅ YOLOv12 training on your RTX 3070 Ti
-- ✅ COCO128 dataset ready to use
-- ✅ Easy dataset management
-- ✅ Fast inference
-- ✅ No complex Docker setup
-- ✅ Perfect for personal projects
-
-**Start with the quick test command above to verify everything works!**
