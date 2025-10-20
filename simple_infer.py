@@ -19,13 +19,13 @@ def main():
     args = parser.parse_args()
     
     if not Path(args.weights).exists():
-        print(f"❌ Model not found: {args.weights}")
+        print(f"Model not found: {args.weights}")
         return
     
-    print(f"🔍 Running inference...")
-    print(f"🤖 Model: {args.weights}")
-    print(f"📸 Source: {args.source}")
-    print(f"🎯 Confidence: {args.conf}")
+    print(f"Running inference...")
+    print(f"Model: {args.weights}")
+    print(f"Source: {args.source}")
+    print(f"Confidence: {args.conf}")
     
     try:
         # Load model
@@ -40,19 +40,19 @@ def main():
             show=True  # Show results in window
         )
         
-        print("✅ Inference completed!")
+        print("Inference completed!")
         
         # Print detection summary
         for r in results:
             if r.boxes is not None:
-                print(f"📊 Detected {len(r.boxes)} objects")
+                print(f"Detected {len(r.boxes)} objects")
                 for box in r.boxes:
                     conf = float(box.conf)
                     cls = int(box.cls)
                     print(f"  - Class {cls}: {conf:.2f} confidence")
         
     except Exception as e:
-        print(f"❌ Inference failed: {e}")
+        print(f"Inference failed: {e}")
 
 if __name__ == "__main__":
     main()

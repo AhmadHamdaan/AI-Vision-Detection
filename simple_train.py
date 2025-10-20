@@ -26,7 +26,7 @@ def main():
     # Dataset path
     dataset_path = Path(f"datasets/{args.dataset}")
     if not dataset_path.exists():
-        print(f"❌ Dataset not found: {dataset_path}")
+        print(f"Dataset not found: {dataset_path}")
         print("Available datasets:")
         for d in Path("datasets").glob("*"):
             if d.is_dir():
@@ -38,7 +38,7 @@ def main():
         # COCO128 already has its own yaml file in the datasets directory
         data_yaml_path = f"datasets/{args.dataset}.yaml"
         if not Path(data_yaml_path).exists():
-            print(f"❌ COCO128 yaml file not found: {data_yaml_path}")
+            print(f"COCO128 yaml file not found: {data_yaml_path}")
             return
     else:
         # Create data.yaml for custom datasets
@@ -54,13 +54,13 @@ def main():
         with open(data_yaml_path, 'w') as f:
             yaml.dump(data_yaml, f)
     
-    print(f"🚀 Starting YOLOv12 training...")
-    print(f"📊 Dataset: {args.dataset}")
-    print(f"🤖 Model: {args.model}")
-    print(f"🔄 Epochs: {args.epochs}")
-    print(f"📦 Batch: {args.batch}")
-    print(f"🖼️  Image size: {args.imgsz}")
-    print(f"🎮 GPU: {args.device}")
+    print(f"Starting YOLOv12 training...")
+    print(f"Dataset: {args.dataset}")
+    print(f"Model: {args.model}")
+    print(f"Epochs: {args.epochs}")
+    print(f"Batch: {args.batch}")
+    print(f"Image size: {args.imgsz}")
+    print(f"GPU: {args.device}")
     
     try:
         # Load model
@@ -82,11 +82,11 @@ def main():
             workers=0  # Fix multiprocessing issues on Windows
         )
         
-        print("✅ Training completed!")
-        print(f"📁 Results saved in: runs/train_{args.dataset}")
+        print("Training completed!")
+        print(f"Results saved in: runs/train_{args.dataset}")
         
     except Exception as e:
-        print(f"❌ Training failed: {e}")
+        print(f"Training failed: {e}")
     finally:
         # Cleanup temporary files only
         temp_yaml_path = f"temp_data_{args.dataset}.yaml"

@@ -2,7 +2,7 @@
 
 A streamlined YOLOv12 setup optimized for your RTX 3070 Ti (8GB VRAM).
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 ```bash
@@ -63,7 +63,7 @@ python simple_infer.py --weights yolov12n.pt --source your_image.jpg
 python simple_infer.py --weights runs/train_your_dataset/weights/best.pt --source your_image.jpg
 ```
 
-## 🎯 Optimized Settings for RTX 3070 Ti
+## Optimized Settings for RTX 3070 Ti
 
 | Model | Batch Size | Image Size | VRAM Usage | Training Speed |
 |-------|------------|------------|------------|----------------|
@@ -71,7 +71,7 @@ python simple_infer.py --weights runs/train_your_dataset/weights/best.pt --sourc
 | yolov12s | 16 | 640 | ~6GB | Fast |
 | yolov12m | 8 | 640 | ~8GB | Medium |
 
-## 📁 File Structure
+## File Structure
 ```
 AI-Vision-Detection/
 ├── simple_train.py          # Training script
@@ -83,7 +83,7 @@ AI-Vision-Detection/
 └── runs/                    # Training outputs
 ```
 
-## 🔧 Commands
+## Commands
 
 ### Training Commands
 ```bash
@@ -115,7 +115,7 @@ python simple_infer.py --weights runs/train_coco128/weights/best.pt --source ima
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source image.jpg --conf 0.5
 ```
 
-## 🎮 GPU Monitoring
+## GPU Monitoring
 
 Check GPU usage during training:
 ```bash
@@ -126,7 +126,7 @@ nvidia-smi
 watch -n 1 nvidia-smi
 ```
 
-## 📊 Expected Performance
+## Expected Performance
 
 ### Training Times (RTX 3070 Ti)
 - **yolov12n**: ~2 min/epoch (1000 images)
@@ -138,7 +138,7 @@ watch -n 1 nvidia-smi
 - **yolov12s**: ~120 FPS
 - **yolov12m**: ~80 FPS
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Out of Memory (OOM)
 ```bash
@@ -158,7 +158,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
-## 🚀 Command Reference
+## Command Reference
 
 ### Start Training (Recommended)
 ```bash
@@ -183,13 +183,13 @@ python simple_train.py --dataset coco128 --model yolov12m.pt --epochs 50 --batch
 
 ### Run Inference
 ```bash
-# 🖼️ SHOW ONLY (doesn't save - just displays results)
+# SHOW ONLY (doesn't save - just displays results)
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source your_image.jpg
 
-# 💾 SAVE RESULTS (recommended - saves processed image)
+# SAVE RESULTS (recommended - saves processed image)
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source your_image.jpg --save
 
-# 📁 Saved results go to: yolov12/runs/detect/predict/
+# Saved results go to: yolov12/runs/detect/predict/
 ```
 
 ### Auto-Save Examples
@@ -221,14 +221,14 @@ You can put test images **anywhere** and use the full path:
 - **Project folder**: `test_image.jpg` (if in same folder as scripts)
 - **Create a folder**: `mkdir test_images` then put images there
 
-## 📊 Training Progress
+## Training Progress
 
 Your training results will be saved in:
 - **Model weights**: `runs/train_coco128/weights/best.pt`
 - **Training plots**: `runs/train_coco128/`
 - **Results**: `runs/train_coco128/results.png`
 
-## 🎯 Performance Tips
+## Performance Tips
 
 - **Start with 5 epochs** to test everything works
 - **Use batch size 8-16** for RTX 3070 Ti (8GB VRAM)
@@ -236,14 +236,14 @@ Your training results will be saved in:
 - **yolov12n** is fastest for testing
 - **yolov12s** gives best balance of speed/accuracy
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Path with Spaces Error
 ```bash
-# ❌ Wrong (causes error)
+# Wrong (causes error)
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\test.jpg
 
-# ✅ Correct (use quotes)
+# Correct (use quotes)
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\test.jpg"
 ```
 
@@ -272,21 +272,21 @@ copy "C:\Users\Ahmad Hamdaan\Pictures\Camera Roll\sidetest.jpg" "sidetest.jpg"
 python simple_infer.py --weights runs/train_coco128/weights/best.pt --source sidetest.jpg --save
 ```
 
-## 📁 File Locations
+## File Locations
 
 - **Dataset**: `datasets/coco128/` (128 images, 80 classes)
 - **Config**: `datasets/coco128.yaml`
 - **Trained models**: `runs/train_coco128/weights/`
 - **Training logs**: `runs/train_coco128/`
 
-## 🎉 That's It!
+## That's It!
 
 This simple setup gives you:
-- ✅ YOLOv12 training on your RTX 3070 Ti
-- ✅ COCO128 dataset ready to use
-- ✅ Easy dataset management
-- ✅ Fast inference
-- ✅ No complex Docker setup
-- ✅ Perfect for personal projects
+- YOLOv12 training on your RTX 3070 Ti
+- COCO128 dataset ready to use
+- Easy dataset management
+- Fast inference
+- No complex Docker setup
+- Perfect for personal projects
 
 **Start with the quick test command above to verify everything works!**

@@ -2,7 +2,7 @@
 
 A streamlined YOLOv12 setup optimized for your RTX 3070 Ti (8GB VRAM).
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 ```bash
@@ -52,7 +52,7 @@ python simple_train.py --dataset your_dataset --model yolov12s.pt --epochs 50 --
 python simple_infer.py --weights runs/train_your_dataset/weights/best.pt --source your_image.jpg
 ```
 
-## 🎯 Optimized Settings for RTX 3070 Ti
+## Optimized Settings for RTX 3070 Ti
 
 | Model | Batch Size | Image Size | VRAM Usage | Training Speed |
 |-------|------------|------------|------------|----------------|
@@ -60,7 +60,7 @@ python simple_infer.py --weights runs/train_your_dataset/weights/best.pt --sourc
 | yolov12s | 16 | 640 | ~6GB | Fast |
 | yolov12m | 8 | 640 | ~8GB | Medium |
 
-## 📁 File Structure
+## File Structure
 ```
 AI-Vision-Detection/
 ├── simple_train.py          # Training script
@@ -72,7 +72,7 @@ AI-Vision-Detection/
 └── runs/                    # Training outputs
 ```
 
-## 🔧 Commands
+## Commands
 
 ### Training
 ```bash
@@ -95,7 +95,7 @@ python simple_infer.py --weights runs/train_my_dataset/weights/best.pt --source 
 python simple_infer.py --weights runs/train_my_dataset/weights/best.pt --source image.jpg --conf 0.5
 ```
 
-## 🎮 GPU Monitoring
+## GPU Monitoring
 
 Check GPU usage during training:
 ```bash
@@ -106,7 +106,7 @@ nvidia-smi
 watch -n 1 nvidia-smi
 ```
 
-## 📊 Expected Performance
+## Expected Performance
 
 ### Training Times (RTX 3070 Ti)
 - **yolov12n**: ~2 min/epoch (1000 images)
@@ -118,7 +118,7 @@ watch -n 1 nvidia-smi
 - **yolov12s**: ~120 FPS
 - **yolov12m**: ~80 FPS
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Out of Memory (OOM)
 ```bash
@@ -138,13 +138,13 @@ python -c "import torch; print(torch.cuda.is_available())"
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
-## 🎉 That's It!
+## That's It!
 
 This simple setup gives you:
-- ✅ YOLOv12 training on your RTX 3070 Ti
-- ✅ Easy dataset management
-- ✅ Fast inference
-- ✅ No complex Docker setup
-- ✅ Perfect for personal projects
+- YOLOv12 training on your RTX 3070 Ti
+- Easy dataset management
+- Fast inference
+- No complex Docker setup
+- Perfect for personal projects
 
 Start with `yolov12n.pt` for quick experiments, then move to `yolov12s.pt` or `yolov12m.pt` for better accuracy!
